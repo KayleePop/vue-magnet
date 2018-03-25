@@ -21,7 +21,7 @@ or use a script tag to include the minified build
 ``` html
 <script src="https://vuejs.org/js/vue.js"></script>
 <!-- Make sure to place it after Vue -->
-<script src=""></script>
+<script src="https://cdn.rawgit.com/KayleePop/vue-magnet/7f04459a/vue-magnet.min.js"></script>
 ```
 The minified script will automatically call `window.Vue.use(VueMagnet)`, so you can start using v-magnet immediately.
 
