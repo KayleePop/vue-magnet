@@ -11,5 +11,6 @@ export default {
   cleanUpVue (vm) {
     vm.$destroy()
     vm.$el.remove()
+    delete window.Vue
   }
 }
