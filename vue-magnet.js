@@ -59,7 +59,7 @@ let VueMagnet = {
           autoplay: false, controls: false // stops any overwrite of the element's values
         }, (err, elem) => {
           if (err) throw err
-          el.dispatchEvent(new CustomEvent('magnet-loaded')) // eslint-disable-line
+          el.dispatchEvent(new window.CustomEvent('magnet-loaded'))
         })
       }
     })
