@@ -43,7 +43,7 @@ let VueMagnet = {
         let fileToRender = torrent.files.find((file) => {
           if (!path) return true // if no path is specified, render the first file
 
-          // only set rootDir if the file in in a directory
+          // only set rootDir if the file is in a directory
           let rootDir = /\//.test(file.path) ? (torrent.name + '/') : ''
 
           path = path.replace(/^\//, '') // remove initial / if present
