@@ -1,10 +1,11 @@
 let WebTorrent = require('webtorrent')
+let idbStore = require('indexeddb-chunk-store')
 
 let VueMagnet = {
   install (Vue, options) {
     Vue.WebTorrent = Vue.WebTorrent || new WebTorrent()
     if (options && options.magnetLink) {
-      Vue.WebTorrent.add(options.magnetLink, {path: '/vueMagnet/'})
+      Vue.WebTorrent.add(options.magnetLink, {store: idbStore})
     }
 
     Vue.directive('magnet', (el, binding, vnode) => {
@@ -34,10 +35,7 @@ let VueMagnet = {
           existingTorrent.on('ready', () => renderFile(existingTorrent))
         }
       } else {
-        client.add(magnetLink,
-          { path: '/vueMagnet/' }, // cache files here
-          renderFile
-        )
+        client.add(magnetLink, { store: idbStore }, renderFile)
       }
 
       function renderFile (torrent) {
