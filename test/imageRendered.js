@@ -8,7 +8,7 @@ test('image should be rendered correctly', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(10000)
+  t.timeoutAfter(2 * 60 * 1000)
 
   Vue.config.errorHandler = (err) => t.fail(err.message)
 
