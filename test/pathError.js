@@ -7,7 +7,7 @@ import utils from './shared/utils.js'
 test('specifying an invalid path should throw an error', (t) => {
   utils.createAppDiv()
 
-  t.plan(1)
+  t.plan(1) // either the vue error or the window error
   t.timeoutAfter(2 * 60 * 1000)
 
   Vue.use(VueMagnet)
