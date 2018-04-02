@@ -8,9 +8,13 @@ export default {
     appElement.setAttribute('id', 'app')
     document.body.appendChild(appElement)
   },
-  cleanUpVue (vm) {
-    vm.$destroy()
-    vm.$el.remove()
+  cleanUp () {
+    if (window.vueInstance) {
+      let vm = window.vueInstance
+      vm.$el.remove()
+      vm.$destroy()
+      delete window.vueInstance
+    }
     delete window.Vue
   }
 }
