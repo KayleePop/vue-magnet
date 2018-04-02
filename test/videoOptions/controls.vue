@@ -15,7 +15,7 @@ export default {
     check (event) {
       let elem = event.currentTarget
 
-      if (!elem.autoplay && elem.controls) {
+      if (!elem.autoplay && elem.paused && elem.controls) {
         this.$emit('success')
       } else {
         throw new Error('incorrect video tag settings')
