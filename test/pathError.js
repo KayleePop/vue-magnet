@@ -9,7 +9,7 @@ test('specifying an invalid path should throw an error', (t) => {
   utils.createAppDiv()
 
   t.plan(1) // either the vue error or the window error
-  t.timeoutAfter(2 * 60 * 1000)
+  t.timeoutAfter(10 * 1000)
 
   window.onerror = (msg) => t.true(msg.includes('No file found matching this path: invalid'))
 

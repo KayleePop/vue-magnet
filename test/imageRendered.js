@@ -9,7 +9,7 @@ test('image should be rendered correctly', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(2 * 60 * 1000)
+  t.timeoutAfter(10 * 1000)
 
   loadjs('https://vuejs.org/js/vue.js', () => {
     window.Vue.use(VueMagnet)
