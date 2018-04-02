@@ -15,6 +15,7 @@ export default {
       vm.$destroy()
       delete window.vueInstance
     }
+    if (window.Vue && window.Vue.WebTorrent) window.Vue.WebTorrent.destroy()
     delete window.Vue
   }
 }
