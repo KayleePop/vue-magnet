@@ -1,8 +1,8 @@
-import MultipleTestComponent from './MultipleFilesFromSameTorrent.vue'
-import loadjs from 'loadjs'
-import VueMagnet from '../vue-magnet.js'
-import test from 'tape'
-import utils from './shared/utils.js'
+const MultipleTestComponent = require('./MultipleFilesFromSameTorrent.vue')
+const loadjs = require('loadjs')
+const VueMagnet = require('../vue-magnet.js')
+const test = require('tape')
+const utils = require('./shared/utils.js')
 
 test('multiple files from the same torrent shouldn\'t throw an error', (t) => {
   utils.cleanUp()

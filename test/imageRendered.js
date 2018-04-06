@@ -1,8 +1,8 @@
-import ImageRenderedComponent from './imageRendered.vue'
-import loadjs from 'loadjs'
-import VueMagnet from '../vue-magnet.js'
-import test from 'tape'
-import utils from './shared/utils.js'
+const ImageRenderedComponent = require('./imageRendered.vue')
+const loadjs = require('loadjs')
+const VueMagnet = require('../vue-magnet.js')
+const test = require('tape')
+const utils = require('./shared/utils.js')
 
 test('image should be rendered correctly', (t) => {
   utils.cleanUp()

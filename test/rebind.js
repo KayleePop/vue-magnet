@@ -1,8 +1,8 @@
-import RebindComponent from './rebind.vue'
-import loadjs from 'loadjs'
-import VueMagnet from '../vue-magnet.js'
-import test from 'tape'
-import utils from './shared/utils.js'
+const RebindComponent = require('./rebind.vue')
+const loadjs = require('loadjs')
+const VueMagnet = require('../vue-magnet.js')
+const test = require('tape')
+const utils = require('./shared/utils.js')
 
 test('rebinding the magnet link should correctly load the new image', (t) => {
   utils.cleanUp()

@@ -67,4 +67,4 @@ let VueMagnet = {
 
 if (window.Vue) window.Vue.use(VueMagnet)
 
-export default VueMagnet
+module.exports = VueMagnet

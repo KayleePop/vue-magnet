@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   createAppDiv () {
     let previousAppElement = document.querySelector('#app')
     if (previousAppElement) {

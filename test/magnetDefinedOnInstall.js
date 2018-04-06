@@ -1,8 +1,8 @@
-import MagnetDefinedOnInstallComponent from './magnetDefinedOnInstall.vue'
-import loadjs from 'loadjs'
-import VueMagnet from '../vue-magnet.js'
-import test from 'tape'
-import utils from './shared/utils.js'
+const MagnetDefinedOnInstallComponent = require('./magnetDefinedOnInstall.vue')
+const loadjs = require('loadjs')
+const VueMagnet = require('../vue-magnet.js')
+const test = require('tape')
+const utils = require('./shared/utils.js')
 
 test('Defining a magnet link on install should still correctly load files', (t) => {
   utils.cleanUp()

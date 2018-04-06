@@ -1,11 +1,11 @@
-import AutoplayComponent from './videoOptions/autoplay.vue'
-import ControlsComponent from './videoOptions/controls.vue'
-import BothComponent from './videoOptions/both.vue'
-import NeitherComponent from './videoOptions/neither.vue'
-import loadjs from 'loadjs'
-import VueMagnet from '../vue-magnet.js'
-import test from 'tape'
-import utils from './shared/utils.js'
+const AutoplayComponent = require('./videoOptions/autoplay.vue')
+const ControlsComponent = require('./videoOptions/controls.vue')
+const BothComponent = require('./videoOptions/both.vue')
+const NeitherComponent = require('./videoOptions/neither.vue')
+const loadjs = require('loadjs')
+const VueMagnet = require('../vue-magnet.js')
+const test = require('tape')
+const utils = require('./shared/utils.js')
 
 test('autoplay property should work', (t) => {
   utils.cleanUp()
