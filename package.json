@@ -5,19 +5,7 @@
   "main": "vue-magnet.js",
   "scripts": {
     "test": "standard && browserify -t vueify -t brfs test/*.js | tape-run",
-    "build": "browserify -t [ babelify --presets [ env ] ] vue-magnet.js | minify > vue-magnet.min.js"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "env"
-          ]
-        }
-      ]
-    ]
+    "build": "browserify vue-magnet.js | minify > vue-magnet.min.js"
   },
   "repository": {
     "type": "git",
@@ -37,9 +25,6 @@
     "url": "https://github.com/KayleePop/vue-magnet/issues"
   },
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babelify": "^8.0.0",
     "webtorrent": "^0.98.24"
   },
   "devDependencies": {
