@@ -6,7 +6,7 @@
 </template>
 
 <script>
-export default {
+module.exports = {
   data () {
     return {
       numLoaded: 0
