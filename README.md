@@ -13,7 +13,7 @@ Streams large video and audio files before they are fully downloaded.
 ## Install
 `npm install vue-magnet`
 ``` javascript
-import VueMagnet from 'vue-magnet'
+const VueMagnet = require('vue-magnet')
 
 Vue.use(VueMagnet)
 ```
@@ -62,5 +62,12 @@ new Vue({
 </script>
 <img v-magnet="sintelMagnet + '&path=poster.jpg'"></img>
 ```
+A magnet link can be defined on install as well.
+``` javascript
+const VueMagnet = require('vue-magnet')
+
+Vue.use(VueMagnet, { magnetLink: sintelMagnet })
+```
+
 ## How it works
 This plugin is a declarative and Vue compatible API for WebTorrent's `file.renderTo()` function [documented here](https://webtorrent.io/docs)
