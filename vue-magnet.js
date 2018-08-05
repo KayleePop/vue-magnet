@@ -12,16 +12,18 @@ const VueMagnet = {
 
       const client = Vue.WebTorrent
 
-      let magnetLink
-      let path
+      let magnetLink = binding.value
+      let path = '' // default path is matching everything
+
       if (options.magnetLink) {
         magnetLink = options.magnetLink
         path = binding.value
-      } else {
-        const pathRegex = /&path=([^&]+)/
-        const pathSearch = pathRegex.exec(binding.value)
-        path = (pathSearch && 1 in pathSearch) ? pathSearch[1] : '' // default path is matching everything
-        magnetLink = binding.value.replace(pathRegex, '')
+      }
+
+      const pathRegex = /&path=([^&]+)/
+      if (pathRegex.test(magnetLink)) {
+        path = pathRegex.exec(magnetLink)[1]
+        magnetLink = magnetLink.replace(pathRegex, '')
       }
 
       const torrent = client.get(magnetLink) || client.add(magnetLink)
