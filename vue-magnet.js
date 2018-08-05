@@ -1,9 +1,9 @@
 let WebTorrent = require('webtorrent')
 
 let VueMagnet = {
-  install (Vue, options) {
+  install (Vue, options = {}) {
     Vue.WebTorrent = Vue.WebTorrent || new WebTorrent()
-    if (options && options.magnetLink) {
+    if (options.magnetLink) {
       Vue.WebTorrent.add(options.magnetLink)
     }
 
@@ -14,7 +14,7 @@ let VueMagnet = {
 
       let magnetLink
       let path
-      if (options && options.magnetLink) {
+      if (options.magnetLink) {
         magnetLink = options.magnetLink
         path = binding.value
       } else {
