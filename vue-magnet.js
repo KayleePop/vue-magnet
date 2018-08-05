@@ -1,6 +1,6 @@
-let WebTorrent = require('webtorrent')
+const WebTorrent = require('webtorrent')
 
-let VueMagnet = {
+const VueMagnet = {
   install (Vue, options = {}) {
     Vue.WebTorrent = Vue.WebTorrent || new WebTorrent()
     if (options.magnetLink) {
@@ -10,7 +10,7 @@ let VueMagnet = {
     Vue.directive('magnet', (el, binding, vnode) => {
       if (binding.value === binding.oldValue) return
 
-      let client = Vue.WebTorrent
+      const client = Vue.WebTorrent
 
       let magnetLink
       let path
@@ -18,13 +18,13 @@ let VueMagnet = {
         magnetLink = options.magnetLink
         path = binding.value
       } else {
-        let pathRegex = /&path=([^&]+)/
-        let pathSearch = pathRegex.exec(binding.value)
+        const pathRegex = /&path=([^&]+)/
+        const pathSearch = pathRegex.exec(binding.value)
         path = (pathSearch && 1 in pathSearch) ? pathSearch[1] : '' // default path is matching everything
         magnetLink = binding.value.replace(pathRegex, '')
       }
 
-      let torrent = client.get(magnetLink) || client.add(magnetLink)
+      const torrent = client.get(magnetLink) || client.add(magnetLink)
 
       // make sure metadata is available before path matching
       if (torrent.metadata) {
@@ -35,11 +35,11 @@ let VueMagnet = {
 
       function renderFile (torrent) {
         // only render the first file found matching the path exactly
-        let fileToRender = torrent.files.find((file) => {
+        const fileToRender = torrent.files.find((file) => {
           if (!path) return true // if no path is specified, render the first file
 
           // only set rootDir if the file is in a directory
-          let rootDir = /\//.test(file.path) ? (torrent.name + '/') : ''
+          const rootDir = /\//.test(file.path) ? (torrent.name + '/') : ''
 
           path = path.replace(/^\//, '') // remove initial / if present
 
