@@ -8,7 +8,6 @@ test('multiple files from the same torrent shouldn\'t throw an error', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(10 * 1000)
 
   Vue.use(VueMagnet)
 

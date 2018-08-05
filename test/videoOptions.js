@@ -11,7 +11,6 @@ test('autoplay property should work', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(10 * 1000)
 
   Vue.use(VueMagnet)
 
@@ -30,7 +29,6 @@ test('controls property should work', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(10 * 1000)
 
   Vue.use(VueMagnet)
 
@@ -49,7 +47,6 @@ test('both autoplay and controls together should work', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(10 * 1000)
 
   Vue.use(VueMagnet)
 
@@ -68,7 +65,6 @@ test('neither autoplay and controls should work', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(10 * 1000)
 
   Vue.use(VueMagnet)
 

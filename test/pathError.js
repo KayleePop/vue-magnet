@@ -8,7 +8,6 @@ test('specifying an invalid path should throw an error', (t) => {
   utils.createAppDiv()
 
   t.plan(1) // either the vue error or the window error
-  t.timeoutAfter(10 * 1000)
 
   Vue.use(VueMagnet)
 

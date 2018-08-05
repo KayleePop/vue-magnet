@@ -8,7 +8,6 @@ test('rebinding the magnet link should correctly load the new image', (t) => {
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(20 * 1000)
 
   Vue.use(VueMagnet)
 

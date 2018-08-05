@@ -9,7 +9,6 @@ test('Defining a magnet link on install should still correctly load files', (t) 
   utils.createAppDiv()
 
   t.plan(1)
-  t.timeoutAfter(10 * 1000)
 
   Vue.use(VueMagnet, {magnetLink: magnetLink})
 
