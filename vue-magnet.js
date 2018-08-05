@@ -24,17 +24,13 @@ let VueMagnet = {
         magnetLink = binding.value.replace(pathRegex, '')
       }
 
-      let existingTorrent = client.get(magnetLink) // null if it doesn't exist
+      let torrent = client.get(magnetLink) || client.add(magnetLink)
 
-      if (existingTorrent) {
-        // make sure metadata is available before path matching
-        if (existingTorrent.files.length > 0) {
-          renderFile(existingTorrent)
-        } else {
-          existingTorrent.on('ready', () => renderFile(existingTorrent))
-        }
+      // make sure metadata is available before path matching
+      if (torrent.metadata) {
+        renderFile(torrent)
       } else {
-        client.add(magnetLink, renderFile)
+        torrent.on('ready', () => renderFile(torrent))
       }
 
       function renderFile (torrent) {
