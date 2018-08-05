@@ -11,8 +11,6 @@ test('multiple files from the same torrent shouldn\'t throw an error', (t) => {
 
   Vue.use(VueMagnet)
 
-  Vue.config.errorHandler = (err) => t.fail(err.message)
-
   const vm = new Vue({
     el: '#app',
     render: (h) => h(MultipleTestComponent, { on: { finished () {

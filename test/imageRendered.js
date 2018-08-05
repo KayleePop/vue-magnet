@@ -11,8 +11,6 @@ test('image should be rendered correctly', (t) => {
 
   Vue.use(VueMagnet)
 
-  Vue.config.errorHandler = (err) => t.fail(err.message)
-
   const vm = new Vue({
     el: '#app',
     render: (h) => h(ImageRenderedComponent, { on: { equal () {

@@ -7,7 +7,7 @@ const utils = require('./shared/utils.js')
 test('specifying an invalid path should throw an error', (t) => {
   utils.createAppDiv()
 
-  t.plan(1) // either the vue error or the window error
+  t.plan(1)
 
   Vue.use(VueMagnet)
 
@@ -21,11 +21,6 @@ test('specifying an invalid path should throw an error', (t) => {
 
   window.onerror = (msg) => {
     t.true(msg.includes('No file found matching this path: invalid'))
-    utils.cleanUp(vm)
-  }
-
-  Vue.config.errorHandler = (err) => {
-    t.equals(err.message, 'No file found matching this path: invalid')
     utils.cleanUp(vm)
   }
 })

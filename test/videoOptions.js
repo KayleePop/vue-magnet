@@ -14,8 +14,6 @@ test('autoplay property should work', (t) => {
 
   Vue.use(VueMagnet)
 
-  Vue.config.errorHandler = (err) => t.fail(err.message)
-
   const vm = new Vue({
     el: '#app',
     render: (h) => h(AutoplayComponent, { on: { success () {
@@ -31,8 +29,6 @@ test('controls property should work', (t) => {
   t.plan(1)
 
   Vue.use(VueMagnet)
-
-  Vue.config.errorHandler = (err) => t.fail(err.message)
 
   const vm = new Vue({
     el: '#app',
@@ -50,8 +46,6 @@ test('both autoplay and controls together should work', (t) => {
 
   Vue.use(VueMagnet)
 
-  Vue.config.errorHandler = (err) => t.fail(err.message)
-
   const vm = new Vue({
     el: '#app',
     render: (h) => h(BothComponent, { on: { success () {
@@ -67,8 +61,6 @@ test('neither autoplay and controls should work', (t) => {
   t.plan(1)
 
   Vue.use(VueMagnet)
-
-  Vue.config.errorHandler = (err) => t.fail(err.message)
 
   const vm = new Vue({
     el: '#app',

@@ -12,8 +12,6 @@ test('Defining a magnet link on install should still correctly load files', (t) 
 
   Vue.use(VueMagnet, {magnetLink: magnetLink})
 
-  Vue.config.errorHandler = (err) => t.fail(err.message)
-
   const vm = new Vue({
     el: '#app',
     render: (h) => h(MagnetDefinedOnInstallComponent, { on: { finished () {

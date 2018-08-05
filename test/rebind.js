@@ -18,9 +18,4 @@ test('rebinding the magnet link should correctly load the new image', (t) => {
       utils.cleanUp(vm)
     }}})
   })
-
-  Vue.config.errorHandler = (err) => {
-    t.fail(err.message)
-    utils.cleanUp(vm)
-  }
 })
