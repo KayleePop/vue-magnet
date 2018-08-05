@@ -1,5 +1,5 @@
 const RebindComponent = require('./rebind.vue')
-const loadjs = require('loadjs')
+const Vue = require('vue')
 const VueMagnet = require('../vue-magnet.js')
 const test = require('tape')
 const utils = require('./shared/utils.js')
@@ -7,7 +7,6 @@ const FS = require('fs')
 const WebTorrent = require('webtorrent')
 
 test('rebinding the magnet link should correctly load the new image', (t) => {
-  utils.cleanUp()
   utils.createAppDiv()
 
   t.plan(1)
@@ -20,20 +19,20 @@ test('rebinding the magnet link should correctly load the new image', (t) => {
   let client = new WebTorrent()
   client.seed(spaceBuffer)
 
-  loadjs('https://vuejs.org/js/vue.js', () => {
-    window.Vue.use(VueMagnet)
+  Vue.use(VueMagnet)
 
-    window.Vue.config.errorHandler = (err) => {
+  const vm = new Vue({
+    el: '#app',
+    render: (h) => h(RebindComponent, { on: { success () {
       client.torrents[0].destroy(() => client.destroy())
-      t.fail(err.message)
-    }
-
-    window.vueInstance = new window.Vue({
-      el: '#app',
-      render: (h) => h(RebindComponent, { on: { success () {
-        client.torrents[0].destroy(() => client.destroy())
-        t.pass()
-      }}})
-    })
+      t.pass()
+      utils.cleanUp(vm)
+    }}})
   })
+
+  Vue.config.errorHandler = (err) => {
+    client.torrents[0].destroy(() => client.destroy())
+    t.fail(err.message)
+    utils.cleanUp(vm)
+  }
 })

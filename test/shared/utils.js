@@ -1,3 +1,6 @@
+const Vue = require('vue')
+const WebTorrent = require('webtorrent')
+
 module.exports = {
   createAppDiv () {
     let previousAppElement = document.querySelector('#app')
@@ -8,14 +11,13 @@ module.exports = {
     appElement.setAttribute('id', 'app')
     document.body.appendChild(appElement)
   },
-  cleanUp () {
-    if (window.vueInstance) {
-      let vm = window.vueInstance
-      vm.$el.remove()
-      vm.$destroy()
-      delete window.vueInstance
+  cleanUp (vm) {
+    vm.$el.remove()
+    vm.$destroy()
+
+    if (Vue.WebTorrent) {
+      Vue.WebTorrent.destroy()
+      Vue.WebTorrent = new WebTorrent()
     }
-    if (window.Vue && window.Vue.WebTorrent) window.Vue.WebTorrent.destroy()
-    delete window.Vue
   }
 }
