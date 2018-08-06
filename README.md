@@ -17,11 +17,11 @@ const VueMagnet = require('vue-magnet')
 
 Vue.use(VueMagnet)
 ```
-or use a script tag to include the minified build
+or use a script tag to include the minified build. Be sure to use the cdn link from rawgit.com for production apps
 ``` html
 <script src="https://vuejs.org/js/vue.js"></script>
 <!-- Make sure to place it after Vue -->
-<script src="https://cdn.rawgit.com/KayleePop/vue-magnet/eb6e2ab2/vue-magnet.min.js"></script>
+<script src="https://rawgit.com/KayleePop/vue-magnet/master/vue-magnet.min.js"></script>
 ```
 The minified script will automatically call `window.Vue.use(VueMagnet)`, so you can start using v-magnet immediately.
 
