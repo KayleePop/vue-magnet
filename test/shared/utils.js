@@ -16,6 +16,7 @@ module.exports = {
     vm.$destroy()
 
     if (Vue.WebTorrent) {
+      Vue.WebTorrent.torrents[0].store.destroy()
       Vue.WebTorrent.destroy()
       Vue.WebTorrent = new WebTorrent()
     }
