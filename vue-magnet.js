@@ -1,10 +1,11 @@
 const WebTorrent = require('webtorrent')
+const idbkvChunkStore = require('idbkv-chunk-store')
 
 const VueMagnet = {
   install (Vue, options = {}) {
     Vue.WebTorrent = Vue.WebTorrent || new WebTorrent()
     if (options.magnetLink) {
-      Vue.WebTorrent.add(options.magnetLink)
+      Vue.WebTorrent.add(options.magnetLink, {store: idbkvChunkStore})
     }
 
     Vue.directive('magnet', (el, binding, vnode) => {
