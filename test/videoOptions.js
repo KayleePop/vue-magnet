@@ -16,10 +16,14 @@ test('autoplay property should work', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(AutoplayComponent, { on: { success () {
-      t.pass()
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(AutoplayComponent, {
+      on: {
+        success () {
+          t.pass()
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 })
 
@@ -32,10 +36,14 @@ test('controls property should work', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(ControlsComponent, { on: { success () {
-      t.pass()
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(ControlsComponent, {
+      on: {
+        success () {
+          t.pass()
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 })
 
@@ -48,10 +56,14 @@ test('both autoplay and controls together should work', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(BothComponent, { on: { success () {
-      t.pass()
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(BothComponent, {
+      on: {
+        success () {
+          t.pass()
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 })
 
@@ -64,9 +76,13 @@ test('neither autoplay and controls should work', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(NeitherComponent, { on: { success () {
-      t.pass()
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(NeitherComponent, {
+      on: {
+        success () {
+          t.pass()
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 })

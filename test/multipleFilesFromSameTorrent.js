@@ -13,9 +13,13 @@ test('multiple files from the same torrent shouldn\'t throw an error', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(MultipleTestComponent, { on: { finished () {
-      t.pass()
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(MultipleTestComponent, {
+      on: {
+        finished () {
+          t.pass()
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 })

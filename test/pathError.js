@@ -13,10 +13,14 @@ test('specifying an invalid path should throw an error', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(PathErrorComponent, { on: { success () {
-      t.fail('invalid path should throw an error')
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(PathErrorComponent, {
+      on: {
+        success () {
+          t.fail('invalid path should throw an error')
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 
   window.onerror = (msg) => {

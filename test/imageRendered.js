@@ -13,9 +13,13 @@ test('image should be rendered correctly', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(ImageRenderedComponent, { on: { equal () {
-      t.pass()
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(ImageRenderedComponent, {
+      on: {
+        equal () {
+          t.pass()
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 })

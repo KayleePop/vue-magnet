@@ -13,9 +13,13 @@ test('rebinding the magnet link should correctly load the new image', (t) => {
 
   const vm = new Vue({
     el: '#app',
-    render: (h) => h(RebindComponent, { on: { success () {
-      t.pass()
-      utils.cleanUp(vm)
-    }}})
+    render: (h) => h(RebindComponent, {
+      on: {
+        success () {
+          t.pass()
+          utils.cleanUp(vm)
+        }
+      }
+    })
   })
 })
