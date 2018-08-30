@@ -1,6 +1,6 @@
 {
   "name": "vue-magnet",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Adds a magnet attribute which acts like src, but supports torrent magnet links.",
   "main": "vue-magnet.js",
   "scripts": {
