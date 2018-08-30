@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "idbkv-chunk-store": "^1.0.2",
-    "webtorrent": "https://github.com/kayleepop/webtorrent/tarball/idbkv-chunk-store"
+    "webtorrent": "^0.102.3"
   },
   "devDependencies": {
     "babel-minify": "^0.4.3",
