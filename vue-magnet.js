@@ -33,7 +33,7 @@ const VueMagnet = {
       if (torrent.metadata) {
         renderFile(torrent)
       } else {
-        torrent.on('ready', () => renderFile(torrent))
+        torrent.once('ready', () => renderFile(torrent))
       }
 
       function renderFile (torrent) {
