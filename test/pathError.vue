@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img v-magnet="magnetLink + '&path=invalid'" @magnet-loaded="success()"></img>
+    <img v-magnet="magnetLink + '&path=invalid'" @magnet-loaded="resolve()"></img>
   </div>
 </template>
 
@@ -13,8 +13,8 @@ module.exports = {
     }
   },
   methods: {
-    success () {
-      this.$emit('success')
+    resolve () {
+      this.$parent.resolve()
     }
   }
 }

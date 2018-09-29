@@ -15,8 +15,11 @@ module.exports = {
   },
   methods: {
     onLoad () {
-      if (this.path === '&path=poster.jpg') this.path = '&path=space.jpg'
-      else this.$emit('success')
+      if (this.path === '&path=poster.jpg') {
+        this.path = '&path=space.jpg'
+      } else {
+        this.$parent.resolve()
+      }
     }
   }
 }

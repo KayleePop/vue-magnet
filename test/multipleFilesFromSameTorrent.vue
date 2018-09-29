@@ -18,7 +18,7 @@ module.exports = {
     loaded: function () {
       this.numLoaded++
       if (this.numLoaded >= 2) {
-        this.$emit('finished')
+        this.$parent.resolve()
       }
     }
   }

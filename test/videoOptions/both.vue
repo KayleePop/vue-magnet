@@ -1,11 +1,12 @@
 <template>
   <div>
-    <video v-magnet="magnetLink" @magnet-loaded="check($event)" controls autoplay></video>
+    <video id="bothVideo" v-magnet="magnetLink" @magnet-loaded="resolve()" controls autoplay></video>
   </div>
 </template>
 
 <script>
 const magnetLink = require('../shared/magnetLink.js')
+
 module.exports = {
   data () {
     return {
@@ -13,14 +14,8 @@ module.exports = {
     }
   },
   methods: {
-    check (event) {
-      let elem = event.currentTarget
-
-      if (elem.autoplay && !elem.paused && elem.controls) {
-        this.$emit('success')
-      } else {
-        throw new Error('incorrect video tag settings')
-      }
+    resolve () {
+      this.$parent.resolve()
     }
   }
 }
