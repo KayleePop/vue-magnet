@@ -27,7 +27,7 @@ const VueMagnet = {
         magnetLink = magnetLink.replace(pathRegex, '')
       }
 
-      const torrent = client.get(magnetLink) || client.add(magnetLink)
+      const torrent = client.get(magnetLink) || client.add(magnetLink, { store: IdbkvChunkStore })
 
       // make sure metadata is available before path matching
       if (torrent.metadata) {
