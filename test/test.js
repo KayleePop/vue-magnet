@@ -8,6 +8,14 @@ const md5Hash = require('md5-hex')
 function sleep (delay) {
   return new Promise(resolve => setTimeout(resolve, delay))
 }
+function setErrorHandlers (reject) {
+  window.onerror = (message, source, lineno, colno, error) => {
+    reject(error)
+  }
+  Vue.config.errorHandler = (err) => {
+    reject(err)
+  }
+}
 
 test('image should be rendered correctly', async () => {
   utils.prepareDOM()
@@ -17,6 +25,8 @@ test('image should be rendered correctly', async () => {
 
   let vm
   await new Promise((resolve, reject) => {
+    setErrorHandlers(reject)
+
     vm = new Vue({
       el: '#app',
       data: { resolve },
@@ -43,6 +53,8 @@ test(`multiple files from the same torrent shouldn't throw an error`, async () =
 
   let vm
   await new Promise((resolve, reject) => {
+    setErrorHandlers(reject)
+
     vm = new Vue({
       el: '#app',
       data: { resolve },
@@ -62,9 +74,7 @@ test('specifying an invalid path should throw an error', async () => {
   let vm
   await assert.rejects(
     new Promise((resolve, reject) => {
-      window.onerror = (message, source, lineno, colno, error) => {
-        reject(error)
-      }
+      setErrorHandlers(reject)
 
       vm = new Vue({
         el: '#app',
@@ -86,6 +96,8 @@ test('rebinding the magnet link should correctly load the new image', async () =
 
   let vm
   await new Promise((resolve, reject) => {
+    setErrorHandlers(reject)
+
     vm = new Vue({
       el: '#app',
       data: { resolve },
@@ -104,6 +116,8 @@ test('autoplay property should work', async () => {
 
   let vm
   await new Promise((resolve, reject) => {
+    setErrorHandlers(reject)
+
     vm = new Vue({
       el: '#app',
       data: { resolve },
@@ -129,6 +143,8 @@ test('controls property should work', async () => {
 
   let vm
   await new Promise((resolve, reject) => {
+    setErrorHandlers(reject)
+
     vm = new Vue({
       el: '#app',
       data: { resolve },
@@ -154,6 +170,8 @@ test('both autoplay and controls together should work', async () => {
 
   let vm
   await new Promise((resolve, reject) => {
+    setErrorHandlers(reject)
+
     vm = new Vue({
       el: '#app',
       data: { resolve },
@@ -179,6 +197,8 @@ test('autoplay and controls both unset should work', async () => {
 
   let vm
   await new Promise((resolve, reject) => {
+    setErrorHandlers(reject)
+
     vm = new Vue({
       el: '#app',
       data: { resolve },
