@@ -115,7 +115,7 @@ test('autoplay property should work', async () => {
   assert(videoElem.autoplay, 'autoplay should be set')
   assert(!videoElem.controls, 'controls should not be set')
 
-  await sleep(10) // wait for video to start
+  await sleep(100) // wait for video to start
   assert(!videoElem.paused, 'video should be playing')
 
   vm.$destroy()
@@ -140,7 +140,7 @@ test('controls property should work', async () => {
   assert(!videoElem.autoplay, 'autoplay should not be set')
   assert(videoElem.controls, 'controls should be set')
 
-  await sleep(10) // wait for video to start
+  await sleep(100) // wait for video to start
   assert(videoElem.paused, 'video should not be playing')
 
   vm.$destroy()
@@ -165,7 +165,7 @@ test('both autoplay and controls together should work', async () => {
   assert(videoElem.autoplay, 'autoplay should be set')
   assert(videoElem.controls, 'controls should be set')
 
-  await sleep(10) // wait for video to start
+  await sleep(100) // wait for video to start
   assert(!videoElem.paused, 'video should be playing')
 
   vm.$destroy()
@@ -190,7 +190,7 @@ test('autoplay and controls both unset should work', async () => {
   assert(!videoElem.autoplay, 'autoplay should not be set')
   assert(!videoElem.controls, 'controls should not be set')
 
-  await sleep(10) // wait for video to start
+  await sleep(100) // wait for video to start
   assert(videoElem.paused, 'video should not be playing')
 
   vm.$destroy()
