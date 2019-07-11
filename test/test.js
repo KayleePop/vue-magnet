@@ -38,7 +38,7 @@ test('image should be rendered correctly', async () => {
   const response = await window.fetch(posterImg.src)
   assert(response.status, 'poster should be fetched from blobUrl successfully')
 
-  let poster = await response.arrayBuffer()
+  const poster = await response.arrayBuffer()
   // this magic number is from running the hash on poster.jpg previously
   assert.equal(md5Hash(poster), 'd41d8cd98f00b204e9800998ecf8427e', 'loaded poster should match hash')
 

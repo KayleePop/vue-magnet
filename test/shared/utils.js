@@ -9,7 +9,7 @@ module.exports = {
   prepareDOM () {
     clearDOM()
 
-    let appElement = document.createElement('div')
+    const appElement = document.createElement('div')
     appElement.setAttribute('id', 'app')
     document.body.appendChild(appElement)
   },
