@@ -40,7 +40,7 @@
     "muggle-test": "^1.0.0",
     "standard": "^13.0.0",
     "tap-spec": "^5.0.0",
-    "tape-run": "^6.0.0",
+    "tape-run": "^4.0.0",
     "vue": "^2.5.16",
     "vueify": "^9.4.1"
   }
