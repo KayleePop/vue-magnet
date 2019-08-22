@@ -45,7 +45,7 @@ test('image should be rendered correctly', async () => {
   vm.$destroy()
 })
 
-test(`multiple files from the same torrent shouldn't throw an error`, async () => {
+test('multiple files from the same torrent shouldn\'t throw an error', async () => {
   utils.prepareDOM()
   utils.resetWebtorrent()
 
