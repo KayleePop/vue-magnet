@@ -54,7 +54,7 @@ const VueMagnet = {
         }
 
         fileToRender.renderTo(el, {
-          autoplay: false, controls: false // stops any overwrite of the element's values
+          autoplay: el.autoplay, controls: el.controls
         }, (err, elem) => {
           if (err) throw err
           el.dispatchEvent(new window.CustomEvent('magnet-loaded'))
