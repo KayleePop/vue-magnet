@@ -1,7 +1,6 @@
 # vue-magnet
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/KayleePop/vue-magnet.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/KayleePop/vue-magnet.svg?branch=master)](https://travis-ci.org/KayleePop/vue-magnet)
+[![Node.js CI](https://github.com/KayleePop/vue-magnet/workflows/Node.js%20CI/badge.svg)](https://github.com/KayleePop/vue-magnet/actions)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm](https://img.shields.io/npm/v/vue-magnet.svg)](https://www.npmjs.com/package/vue-magnet)
 
