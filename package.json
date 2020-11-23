@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "idbkv-chunk-store": "^1.0.2",
-    "webtorrent": "^0.110.1"
+    "webtorrent": "^0.111.0"
   },
   "devDependencies": {
     "babel-minify": "^0.5.0",
